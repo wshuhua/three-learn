@@ -4,13 +4,19 @@
  * @Author: wangshuhua
  * @Date: 2022-12-06 15:55:16
  * @LastEditors: wangshuhua
- * @LastEditTime: 2022-12-06 15:55:43
+ * @LastEditTime: 2022-12-08 16:48:02
  */
 import * as THREE from 'three';
 import Stat from 'three/examples/jsm/libs/stats.module'
 
 const scene = new THREE.Scene();
 const stats = new Stat();
+stats.setMode(0) // 0: fps , 1: ms, 2: mb
+stats.domElement.style.position = "absolute";
+stats.domElement.style.right = "0px";
+stats.domElement.style.left = "auto";
+stats.domElement.style.top = "0px";
+
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 100);
 camera.position.z = 10;
 camera.lookAt(0, 0, 0)
