@@ -4,7 +4,7 @@
  * @Author: wangshuhua
  * @Date: 2022-12-07 09:55:06
  * @LastEditors: wangshuhua
- * @LastEditTime: 2022-12-19 21:52:11
+ * @LastEditTime: 2022-12-19 22:21:33
  */
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
@@ -71,24 +71,24 @@ function initObject() {
    const cb = new THREE.Vector3();
    const ab = new THREE.Vector3();
 
-   for (let i = 0; i < positions.length; i++) {
+   for (let i = 0; i < positions.length; i += 9) {
       //-400 ~ 400
       const x = Math.random() * n - n2;
       const y = Math.random() * n - n2;
       const z = Math.random() * n - n2;
 
       const ax = x + Math.random() * d - d2;
-      const ay = x + Math.random() * d - d2;
-      const az = x + Math.random() * d - d2;
+      const ay = y + Math.random() * d - d2;
+      const az = z + Math.random() * d - d2;
 
       const bx = x + Math.random() * d - d2;
-      const by = x + Math.random() * d - d2;
-      const bz = x + Math.random() * d - d2;
+      const by = y + Math.random() * d - d2;
+      const bz = z + Math.random() * d - d2;
 
 
       const cx = x + Math.random() * d - d2;
-      const cy = x + Math.random() * d - d2;
-      const cz = x + Math.random() * d - d2;
+      const cy = y + Math.random() * d - d2;
+      const cz = z + Math.random() * d - d2;
 
       // 顶点位置
       positions[i] = ax;
@@ -132,8 +132,8 @@ function initObject() {
 
       // colors
       const vx = (x / n) + 0.5;
-      const vy = (x / n) + 0.5;
-      const vz = (x / n) + 0.5;
+      const vy = (y / n) + 0.5;
+      const vz = (z / n) + 0.5;
       color.setRGB(vx, vy, vz);
 
       colors[ i ]     = color.r;
