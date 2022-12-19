@@ -4,12 +4,14 @@
  * @Author: wangshuhua
  * @Date: 2022-12-06 16:09:59
  * @LastEditors: wangshuhua
- * @LastEditTime: 2022-12-06 16:13:56
+ * @LastEditTime: 2022-12-14 11:15:21
  */
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 import Stats from 'three/examples/jsm/libs/stats.module.js';
 import { GUI } from 'three/examples/jsm/libs/lil-gui.module.min.js';
+
+import t1 from '../img/t1.jpg';
 
 const scene = new THREE.Scene();
 const stats = new Stats();
@@ -24,12 +26,7 @@ camera.lookAt(0, 0, 0);
 
 // 贴图 texture
 const loader = new THREE.TextureLoader();
-const url = 'https://threejs.org/manual/examples/resources/images/wall.jpg'
-const texture = loader.load(url);
-
-const texture2 = loader.load('https://threejs.org/manual/resources/images/compressed-but-large-wood-texture.jpg')
-const texture3 = loader.load('http://localhost:8080/chapter-01/learn/img/1.jpg')
-const texture4 = loader.load('http://localhost:8080/chapter-01/learn/img/2.png')
+const texture4 = loader.load(t1)
 // texture4.magFilter = THREE.LinearFilter;
 texture4.magFilter = THREE.NearestFilter;
 texture4.wrapS = THREE.RepeatWrapping;
